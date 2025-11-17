@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.io.PrintWriter;
+
+public class Tabuada {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite um número: ");
+        int n = sc.nextInt();
+
+        try {
+            PrintWriter pw = new PrintWriter("tabuada.txt");
+
+            for (int i = 1; i <= 10; i++) {
+                pw.println(n + " x " + i + " = " + (n * i));
+            }
+
+            pw.close();
+            System.out.println("Tabuada salva em tabuada.txt");
+        } catch (Exception e) {
+            System.out.println("Erro ao salvar o arquivo.");
+        }
+
+        sc.close();
+    }
+}
