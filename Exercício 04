@@ -1,0 +1,32 @@
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Agenda {
+
+    ArrayList<Contatinho> lista = new ArrayList<>();
+
+    public void addContatinho(Contatinho c) {
+        lista.add(c);
+    }
+
+    public void ordenarLista() {
+        Collections.sort(lista, Comparator.comparing(c -> c.nome));
+    }
+
+    public void salvarLista(String nomeArquivo) {
+        try {
+            PrintWriter pw = new PrintWriter(nomeArquivo);
+
+            for (Contatinho c : lista) {
+                pw.println(c.toString());
+            }
+
+            pw.close();
+            System.out.println("Arquivo salvo: " + nomeArquivo);
+        } catch (Exception e) {
+            System.out.println("Erro ao salvar arquivo.");
+        }
+    }
+}
