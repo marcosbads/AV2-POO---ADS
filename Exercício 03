@@ -1,0 +1,16 @@
+public class Contatinho {
+    String nome;
+    String email;
+    String telefone;
+    String categoria;
+
+    public Contatinho(String nome, String email, String telefone, String categoria) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.categoria = categoria;
+    }
+    public String toString() {
+        return nome + "#" + email + "#" + telefone + "#" + categoria;
+    }
+}
